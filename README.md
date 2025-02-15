@@ -17,6 +17,8 @@ User Management API adalah sistem autentikasi berbasis **Elysia.js** yang memung
 ```
 .
 ├── src
+│   ├── data
+│   │   ├── users.json    # database yang digunakan untuk menyimpan data
 │   ├── routes
 │   │   ├── auth.ts       # Endpoint login & register
 │   │   ├── user.ts       # Endpoint untuk user (profile, edit data)
@@ -25,8 +27,7 @@ User Management API adalah sistem autentikasi berbasis **Elysia.js** yang memung
 │   │   ├── authMiddleware.ts  # Middleware untuk proteksi endpoint
 │   ├── utils
 │   │   ├── auth.ts       # Utility fungsi autentikasi (hashing, token)
-├── data
-│   ├── users.json        # Simulasi database
+│   │   ├── db.ts         # Utility fungsi untuk berinteraksi dengan database 
 ├── package.json
 ├── tsconfig.json
 ├── README.md
@@ -40,11 +41,11 @@ User Management API adalah sistem autentikasi berbasis **Elysia.js** yang memung
    ```
 2. Install dependencies:
    ```sh
-   npm install
+   bun install
    ```
 3. Jalankan server:
    ```sh
-   npm run dev
+   bun dev
    ```
 4. API berjalan di `http://localhost:3000`
 
@@ -54,7 +55,7 @@ User Management API adalah sistem autentikasi berbasis **Elysia.js** yang memung
 |--------|------------|-----------|
 | POST   | `/signup`  | Register user baru |
 | POST   | `/login`   | Login user & generate token |
-| GET    | `/user`    | Ambil data user yang login |
+| GET    | `/`    | Ambil data user yang login |
 | PUT    | `/user`    | Update data user |
 
 ### **Admin Routes** (Hanya untuk admin)
@@ -75,8 +76,14 @@ Middleware memastikan endpoint hanya bisa diakses oleh user yang sesuai:
 - Gunakan **Postman atau Insomnia** untuk testing API.
 - Simulasi database disimpan di `src/data/users.json`, bisa diedit manual jika perlu reset.
 
-## 📜 Lisensi
-Proyek ini menggunakan lisensi MIT. Silakan gunakan dan kembangkan sesuai kebutuhan.
+## 🛠️ Admin User
+Untuk masuk ke akun dengan role admin, gunakan credensial berikut
+```json
+{
+    "username" : "admin",
+    "password" : "admin#123"
+}
+```
 
 ---
 Jika ada pertanyaan atau ingin kontribusi, silakan buka **issue atau pull request**. 🚀

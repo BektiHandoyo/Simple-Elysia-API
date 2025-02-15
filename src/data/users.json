@@ -1,3 +1,12 @@
 {
-  "users": []
+  "users": [
+    {
+      "id": "a18c09aa-b5a8-41a1-be01-eb19b25c52da",
+      "username": "admin",
+      "password": "$2b$10$Xc66uniLqYIgK.7GGCeE/el7OMSQK7nIrASiwSqP45xFgmCwWg2ma",
+      "role": "admin",
+      "createdAt": "2025-02-15T08:30:25.292Z",
+      "updatedAt": "2025-02-15T08:30:25.293Z"
+    }
+  ]
 }
