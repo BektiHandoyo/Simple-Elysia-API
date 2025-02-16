@@ -57,6 +57,7 @@ User Management API adalah sistem autentikasi berbasis **Elysia.js** yang memung
 | POST   | `/login`   | Login user & generate token |
 | GET    | `/`    | Ambil data user yang login |
 | PUT    | `/user`    | Update data user |
+| POST   | `/logout`  | Logout dari akun |
 
 ### **Admin Routes** (Hanya untuk admin)
 | Method | Endpoint    | Deskripsi |

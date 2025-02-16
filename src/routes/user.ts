@@ -49,3 +49,11 @@ user.put("/user", async ({ store, body, set }) => {
     conf_password: t.String(), 
   }),
 });
+
+user.post("/logout", async ({set, cookie : {token}}) => {
+  token.value = '';
+  token.httpOnly = true;
+  token.maxAge = 0;
+  return { message: "Logout Berhasil" };
+});
+
